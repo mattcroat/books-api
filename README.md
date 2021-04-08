@@ -1,3 +1,12 @@
 # Books API
 
-Using React Query with Next.js. The API is using Express.js, and Swagger for API documentation.
+Frontend:
+
+- ⚛️ Next.js (frontend)
+- ♻ React Query (managing server state)
+- ⛵ Tailwind CSS (styles)
+
+Backend:
+
+- 🏃‍♀️ Express.js (backend)
+- ✨ Swagger (API documentation)
