@@ -1,10 +1,13 @@
 import { useQuery } from 'react-query'
 
+import { BookItem } from '@/root/components/BooksList/BookItem'
 import { Container } from '@/root/components/shared/Container'
 import { getAllBooks } from '@/root/api/books'
 
+import type { Book } from '@/root/types/book'
+
 export function BooksList() {
-  const { data: books, error, isLoading, isError } = useQuery<any[], Error>(
+  const { data: books, error, isLoading, isError } = useQuery<Book[], Error>(
     'books',
     getAllBooks
   )
@@ -14,12 +17,20 @@ export function BooksList() {
   }
 
   if (isError) {
-    return <Container>Oh dear! 😱: {error.message}</Container>
+    return (
+      <Container>
+        Oh dear! 😱: <strong>{error.message}</strong>
+      </Container>
+    )
   }
 
   return (
     <Container>
-      <pre>{JSON.stringify(books, null, 2)}</pre>
+      <div className="space-y-8">
+        {books.map(({ id, title, author }) => (
+          <BookItem key={id} id={id} title={title} author={author} />
+        ))}
+      </div>
     </Container>
   )
 }
