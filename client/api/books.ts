@@ -54,3 +54,19 @@ export async function removeBook(id: number): Promise<boolean> {
 
   return true
 }
+
+export async function createBook(book: Book): Promise<Book> {
+  const response = await fetch(`${BASE_URL}/books/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(book),
+  })
+
+  if (!response.ok) {
+    throw new Error((await response.json()).message)
+  }
+
+  return response.json()
+}

@@ -1,8 +1,12 @@
 import { useForm } from 'react-hook-form'
 
-import { Book } from '@/root/types/book'
+import { Book, BookFormProps } from '@/root/types/book'
 
-export function BookForm({ defaultValues, onFormSubmit, isLoading }) {
+export function BookForm({
+  defaultValues,
+  onFormSubmit,
+  isLoading,
+}: BookFormProps) {
   const { register, handleSubmit } = useForm({ defaultValues })
 
   return (
