@@ -3,3 +3,10 @@ export type Book = {
   title: string
   author: string
 }
+
+type QueryKey = [
+  key: string,
+  id: {
+    id: string
+  }
+]

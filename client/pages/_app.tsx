@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
-import { Navbar } from '@/root/components/shared/Navbar'
+import { Navbar } from '@/root/components/shared'
 
 import '@/root/styles/global.css'
 
